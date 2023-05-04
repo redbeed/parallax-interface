@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classic (Buttons)</title>
+
+    <script src="../dist/parallax-interface.js"></script>
+    <link rel="stylesheet" href="../dist/parallax-interface.css">
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            box-sizing: content-box;
+        }
+
+        .parallax-button {
+            display: block;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .parallax-button:hover .background {
+            background-color: black;
+        }
+
+        .background {
+            background-color: #1e88e5;
+            z-index: -1;
+            border-radius: 20px;
+            padding: 10px 20px;
+        }
+
+        .text {
+            display: inline-block;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="parallax-button" data-pxi data-pxi-hitzone="1">
+    <div class="background" data-pxi-factor="0.4">
+        <span class="text" data-pxi-factor="0.5">Click me</span>
+    </div>
+</div>
+
+<div style="width: 50px; height: 50px;"></div>
+
+<div class="parallax-button" data-pxi>
+    <div class="background" data-pxi-factor="1.2">
+        <span class="text" data-pxi-factor>Click me 2</span>
+    </div>
+</div>
+
+<script>
+    ParallaxInterface.init();
+</script>
+
+</body>
+</html>

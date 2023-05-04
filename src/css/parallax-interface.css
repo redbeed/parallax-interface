@@ -1,0 +1,14 @@
+[data-pxi-wrapper] {
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+}
+
+[data-pxi="init"] {
+    box-sizing: border-box;
+    position: relative;
+}
+
+[data-pxi="init"] [data-pxi-factor] {
+    box-sizing: border-box;
+}
