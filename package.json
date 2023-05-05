@@ -1,5 +1,5 @@
 {
-  "name": "parallax-interface",
+  "name": "@redbeed/parallax-interface",
   "version": "0.1.0",
   "type": "module",
   "description": "A lightweight and flexible library for adding mouse-driven parallax effects to your HTML elements, enhancing UI depth and user engagement in any project.",
@@ -30,5 +30,6 @@
   },
   "dependencies": {
     "lodash.throttle": "^4.1.1"
-  }
+  },
+  "main": "dist/parallax-interface.js"
 }
