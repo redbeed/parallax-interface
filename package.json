@@ -31,5 +31,5 @@
   "dependencies": {
     "lodash.throttle": "^4.1.1"
   },
-  "main": "dist/parallax-interface.js"
+  "main": "src/js/ParallaxInterface.js"
 }

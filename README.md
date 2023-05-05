@@ -1,13 +1,14 @@
 # Parallax Interface (PXI)
 
-PXI is a lightweight and flexible library for adding mouse-driven parallax effects to your HTML elements, enhancing UI depth and user engagement in any project.
+PXI is a lightweight and flexible library for adding mouse-driven parallax effects to your HTML elements, enhancing UI
+depth and user engagement in any project.
 
 The whole Project is inspired by the iPad Mouse Hover Effect.
 
 ## Installation
 
 ```bash
-npm install parallax-interface
+npm install @redbeed/parallax-interface
 ```
 
 ### Usage
@@ -29,15 +30,15 @@ ParallaxInterface.init({
 Or you can add the following script to your project directly.
 
 ```html
-<script src="https://unpkg.com/parallax-interface/dist/parallax-interface.js"></script>
+<script src="https://unpkg.com/@redbeed/parallax-interface/dist/parallax-interface.min.js"></script>
 ```
 
 ### HTML
 
-You need to add `data-pax` to your main element and `data-pe-factor` to the elements you want to add the parallax effect to.
+You need to add `data-pax` to your main element and `data-pe-factor` to the elements you want to add the parallax effect
+to.
 
 ```html
-
 <a href="#" data-pax>
     <span data-pe-factor>I am a link</span>
 </a>
@@ -59,13 +60,28 @@ import 'parallax-interface/dist/parallax-interface.css';
 Or you can add the following CSS to your project directly.
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/parallax-interface/dist/parallax-interface.css" />
+<link rel="stylesheet" href="https://unpkg.com/@redbeed/parallax-interface/dist/parallax-interface.css"/>
 ```
+
 ## Troubleshooting
 
 ### Inline Block Elements
 
-You need to add `display: inline-block` to your inline elements like `span` or `a`, if you want to add the parallax effect.
+You need to add `display: inline-block` to your inline elements like `span` or `a`, if you want to add the parallax
+effect.
+
+## Contributing
+
+Everyone is welcome to contribute to this project. Create a pull request or an issue if you find something that could be
+improved.
+
+## Support
+
+If you like this project, please consider supporting it by giving it a star.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
 
 
