@@ -13,7 +13,7 @@ export default [
         output: [
             {
                 file: 'dist/parallax-interface.js',
-                format: 'iife',
+                format: 'esm', // Export as ES6 module
                 sourcemap: true,
                 name: 'ParallaxInterface'
             },
