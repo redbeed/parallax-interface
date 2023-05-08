@@ -79,6 +79,9 @@ improved.
 
 If you like this project, please consider supporting it by giving it a star.
 
+redbeed is a web development agency from Germany, with love for open source projects. 
+You can find more information about us on our website [redbeed.com](https://redbeed.com).
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
