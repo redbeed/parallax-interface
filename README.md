@@ -24,6 +24,7 @@ ParallaxInterface.init({
     hitzoneFactor: 1, // Factor for the hitzone size
     mouseMoveFactor: 0.5, // Factor for the mousemove movement
     animationTime: 500, // Animation time in milliseconds
+    calculateSize: false, // If true, the wrapper and the element will have a fixed size (based on the element's size)
 });
 ```
 

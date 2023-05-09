@@ -9,6 +9,7 @@ export default class ParallaxInterface {
         hitzoneFactor: 1, // Factor for the hitzone size
         mouseMoveFactor: 0.5, // Factor for the mousemove movement
         animationTime: 500, // Animation time in milliseconds
+        calculateSize: false, // If true, the wrapper and the element will have a fixed size (based on the element's size)
     }
 
     /**
@@ -34,8 +35,8 @@ export default class ParallaxInterface {
 
         this.wrapper = null;
 
-        this.prepareElement();
         this.prepareParallaxInterfaces();
+        this.prepareElement();
         this.createWrapper();
 
         this.element.setAttribute("data-pxi", "init");
@@ -61,8 +62,10 @@ export default class ParallaxInterface {
         this.element.parentNode.insertBefore(this.wrapper, this.element);
         this.wrapper.appendChild(this.element);
 
-        this.wrapper.style.width = `${rect.width}px`;
-        this.wrapper.style.height = `${rect.height}px`;
+        if (this.calculateSizeEnabled()) {
+            this.wrapper.style.width = `${rect.width}px`;
+            this.wrapper.style.height = `${rect.height}px`;
+        }
     }
 
     /**
@@ -73,9 +76,11 @@ export default class ParallaxInterface {
      *
      */
     prepareElement() {
-        const rect = this.element.getBoundingClientRect();
-        this.element.style.width = `${rect.width}px`;
-        this.element.style.height = `${rect.height}px`;
+        if (this.calculateSizeEnabled()) {
+            const rect = this.element.getBoundingClientRect();
+            this.element.style.width = `${rect.width}px`;
+            this.element.style.height = `${rect.height}px`;
+        }
     }
 
     /**
@@ -86,12 +91,24 @@ export default class ParallaxInterface {
         this.ParallaxInterfaces.forEach((element) => {
             const rect = element.getBoundingClientRect();
 
-            element.style.width = `${rect.width}px`;
-            element.style.height = `${rect.height}px`;
+            if (this.calculateSizeEnabled()) {
+                element.style.width = `${rect.width}px`;
+                element.style.height = `${rect.height}px`;
+            }
 
             // Cache the factor for performance
             element.cachedFactor = parseFloat(element.dataset.pxiFactor || ParallaxInterface.options.mouseMoveFactor);
         });
+    }
+
+    /**
+     * Check if the calculateSize option is enabled for this instance
+     * or globally for all instances
+     *
+     * @returns {boolean}
+     */
+    calculateSizeEnabled() {
+        return this.element.dataset.pxiCalculateSize !== undefined || ParallaxInterface.options.calculateSize;
     }
 
     /**
