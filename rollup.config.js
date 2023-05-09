@@ -2,6 +2,7 @@ import terser from '@rollup/plugin-terser';
 import postcss from 'rollup-plugin-postcss'
 import commonjs from 'rollup-plugin-commonjs';
 import {nodeResolve} from '@rollup/plugin-node-resolve';
+import babel from "@rollup/plugin-babel";
 
 // `npm run build` -> `production` is true
 // `npm run dev` -> `production` is false
@@ -13,7 +14,7 @@ export default [
         output: [
             {
                 file: 'dist/parallax-interface.js',
-                format: 'esm', // Export as ES6 module
+                format: 'es', // Export as ES6 module
                 sourcemap: true,
                 name: 'ParallaxInterface'
             },
@@ -27,10 +28,11 @@ export default [
         ],
         plugins: [
             nodeResolve(),
-            commonjs(),
             postcss({
                 extract: 'parallax-interface.css',
             }),
+            commonjs(),
+            babel({babelHelpers: 'external', exclude: ['node_modules/**']}),
             production && terser() // minify, but only in production
         ]
     }
