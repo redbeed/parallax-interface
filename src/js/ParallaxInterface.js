@@ -23,10 +23,8 @@ export default class ParallaxInterface {
             ...options,
         };
 
-        document.addEventListener("DOMContentLoaded", () => {
-            const parallaxElements = document.querySelectorAll("[data-pxi]");
-            parallaxElements.forEach((button) => new ParallaxInterface(button));
-        });
+        const parallaxElements = document.querySelectorAll("[data-pxi]");
+        parallaxElements.forEach((button) => new ParallaxInterface(button));
     }
 
     constructor(element) {
