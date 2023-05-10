@@ -1,3 +1,5 @@
+![pxi-header.gif](demo%2Fpxi-header.gif)
+
 # Parallax Interface (PXI)
 
 PXI is a lightweight and flexible library for adding mouse-driven parallax effects to your HTML elements, enhancing UI
