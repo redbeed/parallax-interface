@@ -2,63 +2,105 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Classic (Buttons)</title>
+    <title>Parallax Interface Demo</title>
 
-    <script src="../dist/parallax-interface.js"></script>
+    <script src="../dist/parallax-interface.min.js"></script>
     <link rel="stylesheet" href="../dist/parallax-interface.css">
-
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-            box-sizing: content-box;
-        }
-
-        .parallax-button {
-            display: block;
-            cursor: pointer;
-            user-select: none;
-        }
-
-        .parallax-button:hover .background {
-            background-color: black;
-        }
-
-        .background {
-            background-color: #1e88e5;
-            z-index: -1;
-            border-radius: 20px;
-            padding: 10px 20px;
-        }
-
-        .text {
-            display: inline-block;
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
-        }
-
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-100">
 
-<div class="parallax-button" data-pxi data-pxi-hitzone="1">
-    <div class="background" data-pxi-factor="0.4">
-        <span class="text" data-pxi-factor="0.5">Click me</span>
+<header class="pt-8 text-center mb-32">
+    <img src="./pxi-header.gif" alt="Parallax Interface Header Image" class="max-w-2xl mx-auto mb-12">
+    <h1 class="text-6xl font-bold">Parallax Interface</h1>
+    <p class="mx-auto mt-4 max-w-5xl px-4 text-xl text-gray-600">
+        A lightweight and flexible library for adding mouse-driven parallax
+        effects to your HTML elements, enhancing UI depth and user engagement in any project.
+    </p>
+    <p class="mx-auto mt-4 max-w-5xl px-4 text-sm text-gray-400">
+        Keep in mind that the parallax effect best works on desktop devices with a mouse.
+    </p>
+    <div class="mt-8 flex justify-center">
+        <div data-pxi data-pxi-hitzone="1.5">
+            <a href="https://github.com/redbeed/parallax-interface#installation"
+               class="m-2 inline-block rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+               data-pxi-factor="0.5" title="Documentation" aria-label="Documentation">
+                <span data-pxi-factor="0.2" class="inline-block">Start using</span>
+            </a>
+        </div>
+        <div data-pxi data-pxi-hitzone="1.5">
+            <a href="https://github.com/redbeed/parallax-interface#installation"
+               class="m-2 inline-block rounded bg-green-500 px-4 py-2 font-bold text-white hover:bg-green-700"
+               data-pxi-factor="0.5" title="Issue Reporting" aria-label="Issue Reporting">
+                <span data-pxi-factor="0.2" class="inline-block">Report Issues</span>
+            </a>
+        </div>
     </div>
-</div>
+</header>
 
-<div style="width: 50px; height: 50px;"></div>
+<main class="flex flex-col gap-16">
+    <section class="flex flex-wrap items-center justify-center gap-8">
+        <div data-pxi data-pxi-hitzone="1">
+            <div class="rounded bg-indigo-500 p-5 background" data-pxi-factor="1.2">
+                <span class="inline-block text-3xl text-white" data-pxi-factor="0.5">Button 1</span>
+            </div>
+        </div>
+        <div data-pxi data-pxi-hitzone="1.5">
+            <div class="rounded bg-green-500 p-5 background" data-pxi-factor="1.2">
+                <span class="inline-block text-3xl text-white" data-pxi-factor="1">Button 2</span>
+            </div>
+        </div>
+        <div data-pxi data-pxi-hitzone="2">
+            <div class="rounded bg-red-500 p-5 background" data-pxi-factor="1.2">
+                <span class="inline-block text-3xl text-white" data-pxi-factor="1">Button 3</span>
+            </div>
+        </div>
+    </section>
 
-<div class="parallax-button" data-pxi>
-    <div class="background" data-pxi-factor="1.2">
-        <span class="text" data-pxi-factor>Click me 2</span>
-    </div>
-</div>
+    <section class="mt-16 flex flex-wrap items-center justify-center gap-8">
+        <h2 class="mb-8 w-full text-center text-3xl font-semibold">Image Complex Demo</h2>
+        <div class="h-80 w-full max-w-4xl overflow-hidden rounded bg-gray-300 shadow-lg" data-pxi
+             data-pxi-hitzone="1.5">
+            <div data-pxi-factor="0.02" class="h-full w-full">
+                <img class="scale-125" src="./pexels-jane-doan-1024248.jpg" alt="Example Image from pexels.com">
+            </div>
+            <div class="absolute right-0 bottom-0 z-10 h-full w-full" data-pxi-factor="0.07">
+                <img class="h-full w-full scale-125 object-contain"
+                     src="./pexels-fauxels-3184405-removebg-preview.png" alt="Example Image from pexels.com">
+            </div>
+        </div>
+        <p class="w-full text-center">
+            Images courtesy of <a href="https://www.pexels.com/photo/people-in-couch-1024248/"
+                                  class="underline">Pexels</a>.
+        </p>
+    </section>
+
+    <section class="mt-16 flex flex-wrap items-center justify-center gap-8">
+        <h2 class="mb-8 w-full text-center text-3xl font-semibold">Image Demos</h2>
+        <div class="h-64 w-64 overflow-hidden rounded bg-gray-300 shadow-lg" data-pxi data-pxi-hitzone="1.2">
+            <div data-pxi-factor="1" class="h-full w-full">
+                <img class="h-full w-full scale-150 object-cover" src="https://picsum.photos/seed/a/640/480/"
+                     alt="Example Image from picsum.photos">
+            </div>
+        </div>
+        <div class="h-64 w-64 overflow-hidden rounded bg-gray-300 shadow-lg" data-pxi data-pxi-hitzone="1.5">
+            <div data-pxi-factor="1.5" class="h-full w-full">
+                <img class="h-full w-full scale-150 object-cover" src="https://picsum.photos/seed/b/640/480/"
+                     alt="Example Image from picsum.photos">
+            </div>
+        </div>
+        <div class="h-64 w-64 overflow-hidden rounded bg-gray-300 shadow-lg" data-pxi data-pxi-hitzone="2">
+            <div data-pxi-factor="1.5" class="h-full w-full">
+                <img class="h-full w-full scale-150 object-cover" src="https://picsum.photos/seed/c640/480/"
+                     alt="Example Image from picsum.photos">
+            </div>
+        </div>
+
+        <p class="w-full text-center">
+            Images courtesy of <a href="https://picsum.photos" class="underline">picsum.photos</a>.
+        </p>
+    </section>
+</main>
 
 <script>
     ParallaxInterface.init();
